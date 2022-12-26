@@ -1,0 +1,56 @@
+#include <stdio.h>
+#define _USE_MATH_DEFINES
+#include<math.h>
+
+
+int main(void) {
+
+  int num;
+  float height, theBase;
+  float oneSide;
+  float width, heightLength;
+  float radius;
+
+  float result;
+  
+  printf("삼각형[1] 정사각형[2] 사각형[3] 원[4]");
+  printf("\n면적을 구할 번호를 선택하세요: ");
+  scanf("%d", &num);
+
+  if(num<1||num>5)
+  {
+    printf("잘못된 입력입니다.");
+    exit(1);
+  }
+
+  switch (num)
+    {
+      case 1:  //삼각형
+      printf("높이와 밑변을 입력하세요: ");
+      scanf("%f %f", &height, &theBase);
+      result = height *theBase;
+      break;
+
+    case 2:
+      printf("한 변의 길이를 입력하세요: ");
+      scanf("%f", &oneSide);
+      result = oneSide * oneSide;
+      break;
+
+    case 3:
+      printf("가로 변, 세로 변의 길이를 입력하세요: ");
+      scanf("%f %f", &width, &heightLength);
+      result = width * heightLength;
+      break;
+      
+    case 4:
+      printf("원의 반지름 길이를 입력하세요:");
+      scanf("%f", &radius);
+      result = M_PI * radius * radius;
+      break;
+    }
+
+  printf("도형의 면적은 %.2f입니다.", result);
+  
+  return 0;
+}
